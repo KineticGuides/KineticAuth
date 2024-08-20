@@ -3,7 +3,7 @@ import { DataService } from '../../data.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink, ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import $ from 'jquery';
 
 @Component({
   selector: 'app-template-home',
@@ -53,7 +53,7 @@ export class TemplateHomeComponent  implements OnInit, AfterViewInit {
           localStorage.setItem("uu",data.id)
           this.router.navigate(['/p']);
       } else {
-        alert('Invalid Phone Number - Please Reenter')
+        $( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
       }
   }) 
 
